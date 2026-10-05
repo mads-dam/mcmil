@@ -1,0 +1,332 @@
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+% \usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+\usepackage{adjustbox}
+
+\usepackage{hyperref}    
+\usepackage{url}
+\usepackage{paralist}
+
+\usepackage{tcolorbox}
+\usepackage{latexsym}
+\usepackage{syntonly} 
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{extpfeil}
+\usepackage{stmaryrd}
+\usepackage{color}
+\usepackage{graphics,epsfig, subfigure}
+\usepackage{todonotes}
+\usetikzlibrary{shapes,arrows,shadows,positioning,shapes.multipart,fit,automata}
+\usepackage{comment}
+\usepackage{thmtools,thm-restate}
+\usepackage{multicol}
+
+\usepackage{newfloat}
+\DeclareFloatingEnvironment[
+fileext=los,
+listname={List of Examples},
+name=Example,
+placement=tbhp,
+within=none,
+]{pomset}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{lemma}[theorem]{Lemma}    
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}[theorem]{Example}
+\newenvironment{proof}{{\sc Proof:}}{\hfill$\Box$}
+%
+
+\definecolor{block-gray}{gray}{0.85}
+\newtcolorbox{newnotation}{colback=block-gray,grow to right
+  by=-0mm,grow to left by=-0mm,boxrule=0pt,boxsep=0pt,
+  left=0pt,right=0pt,top=0pt,bottom=0pt}
+
+% Promising stuff
+\newcommand{\Timestamps}{\mbox{\sc T}}
+\newcommand{\Promises}{\mathit{prom}}
+\newcommand{\pValuation}{\overline{\Valuation}}
+\newcommand{\pVal}[2]{\overline{\Valuation}_{#1}({#2})}
+\newcommand{\Views}{V}
+\newcommand{\View}{\nu}
+\newcommand{\Vpre}{\View_{\mathit{pre}}}
+\newcommand{\Vpost}{\View_{\mathit{post}}}
+\newcommand{\Vrold}{\View_{\mathit{rOld}}}
+\newcommand{\Vwold}{\View_{\mathit{wOld}}}
+\newcommand{\Vrnew}{\View_{\mathit{rNew}}}
+\newcommand{\Vwnew}{\View_{\mathit{wNew}}}
+\newcommand{\Vrel}{\View_{\mathit{rel}}}
+\newcommand{\Vcap}{\View_{\mathit{CAP}}}
+\newcommand{\Vaddr}{\View_{\mathit{addr}}}
+\newcommand{\Vdata}{\View_{\mathit{data}}}
+\newcommand{\fwdb}{\mathit{fwdb}}
+\newcommand{\xclb}{\mathit{xclb}}
+\newcommand{\Sem}[2]{\mbox{$\parallel$}{#1}{\mbox{$\parallel$}({#2})}}
+\newcommand{\coh}{\mathit{coh}}
+\newcommand{\ts}{\mathit{ts}} % thread states
+\newcommand{\pMsg}{\overline{\mathit{msg}}}
+\newcommand{\pMem}{\overline{\mem}}
+\newcommand{\pExpRule}{\textsc{pExp}}
+\newcommand{\pStoMemRule}{\textsc{pStoMem}}
+\newcommand{\pStoRegRule}{\textsc{pStoReg}}
+\newcommand{\pStoPCRule}{\textsc{pStoPC}}
+\newcommand{\pLdMemRule}{\textsc{pLdMem}}
+\newcommand{\pRegMap}{\mathit{\overline{\rho}}}
+\newcommand{\pRead}{\mathit{read}}
+\newcommand{\pReadView}{\mathit{read-view}}
+\newcommand{\PCs}{\mathit{PCs}}
+
+% Moving on
+
+\newcommand{\false}{\mathit{false}}
+\newcommand{\MCMIL}{\mbox{MCMIL}}
+\newcommand{\MIL}{\mbox{MIL}}
+% \newcommand{\Res}{\mathit{Res}}
+\newcommand{\Bool}{\mbox{\sc B}}
+\newcommand{\Nat}{\mbox{\sc N}}
+\newcommand{\Regs}{\mathit{Regs}}
+\newcommand{\RegMap}{\rho}
+\newcommand{\Locs}{\mathit{Loc}}
+\newcommand{\Names}{\mathit{Name}}
+\newcommand{\theOp}{\mathit{op}}
+\newcommand{\theType}{\mathit{type}}
+\newcommand{\Values}{\mathit{Val}}
+\newcommand{\Addresses}{\mathit{Addr}}
+\newcommand{\theAddress}{\mathit{addr}}
+\newcommand{\theName}{\mathit{name}}
+\newcommand{\theCond}{\mathit{cond}}
+\newcommand{\theTid}{\mathit{tid}}
+\newcommand{\theInst}{\mathit{inst}}
+\newcommand{\theMemStores}{\mathit{memStores}}
+\newcommand{\Words}{\mathit{Word}}
+\newcommand{\Valuation}{s}
+\newcommand{\Val}[2]{s_{#1}({#2})}
+\newcommand{\Pc}{\mathrm{PC}}
+\newcommand{\pc}{\mathit{pc}}
+\newcommand{\subst}[3]{#1[#2 \mapsto #3]}
+\newcommand{\Stores}{\mathit{Store}}
+\newcommand{\Observations}{\mathit{Obs}}
+\newcommand{\trace}{\mathit{trace}}
+\newcommand{\thrd}{\tau}
+\newcommand{\thrdpool}{\mathit{pool}}
+\newcommand{\conf}{\mathit{States}}
+\newcommand{\States}{\mathit{States}}
+\newcommand{\state}{\sigma}
+\newcommand{\emptystore}{\emptyset}
+\newcommand{\true}{\mathit{true}}
+\newcommand{\sources}{\mathit{sources}}
+\newcommand{\sourcesShared}{\mathit{srcShared}}
+\newcommand{\sourcesLocal}{\mathit{srcLocal}}
+\newcommand{\src}[1]{\mathit{src}(#1)}
+\newcommand{\isMemStore}{\mathit{isMemStore}}
+\newcommand{\minMsg}{\mathit{min}}
+\newcommand{\isRegStore}{\mathit{isRegStore}}
+\newcommand{\isPCStore}{\mathit{isPCStore}}
+%\newcommand{\isReg}{\mathit{isReg}}
+%\newcommand{\isMem}{\mathit{isMem}}
+%\newcommand{\isOKStore}{\mathit{isOKStore}}
+\newcommand{\inst}{\iota}
+\newcommand{\MILlang}{\mathcal{I}}
+\newcommand{\dom}[1]{\mathrm{dom}(#1)}
+\newcommand{\val}{\mathit{v}}
+\newcommand{\mem}{mem}
+\newcommand{\maybecome}{\rightsquigarrow}
+\newcommand{\mayrel}{\mbox{$=$}\mathit{may}\mbox{$\Rightarrow$}}
+\newcommand{\strmay}{\textit{str-may}\,}
+\newcommand{\stract}{\textit{str-act}\,}
+\newcommand{\unop}{f}
+\newcommand{\binop}{g}
+\newcommand{\Ops}{\mathit{Ops}}
+\newcommand{\op}{\mathit{op}}
+\newcommand{\SOps}{\mathit{SOps}}
+\newcommand{\sop}{\mathit{sop}}
+\newcommand{\UOps}{\mathit{UOps}}
+\newcommand{\uop}{\mathit{uop}}
+\newcommand{\depends}{\succ}
+
+\newcommand{\fundefined}[2]{#1(#2)\mbox{$\uparrow$}}
+\newcommand{\fdefined}[2]{#1(#2)\mbox{$\downarrow$}}
+\newcommand{\proj}[2]{#1\mbox{$\mid_{#2}$}}
+
+%\newcommand{\strcert}{\textit{str-crt}}
+
+\newcommand{\fn}{\mathit{fn}}
+\newcommand{\bn}{\mathit{bn}}
+\newcommand{\translate}{\mathit{translate}}
+
+\newcommand{\TimeStamps}{\mathit{Time}}
+\newcommand{\Threads}{\mathit{Thrd}}
+\newcommand{\thread}{\tau}
+
+\newcommand{\Tids}{Tids}
+\newcommand{\tid}{\theTid}
+\newcommand{\enq}{\mathit{enq}}
+\newcommand{\deq}{\mathit{deq}}
+\newcommand{\append}{\mathrm{@}}
+
+\newcommand{\Types}{\mathit{Ty}}
+\newcommand{\type}{\mathit{ty}}
+\newcommand{\exetype}{\mathcal{E}}
+\newcommand{\pctype}{\mathcal PC}
+\newcommand{\regtype}{\mathcal R}
+\newcommand{\memtype}{\mathcal M}
+\newcommand{\ass}[3]{#2 \leftarrow #1 ? #3}
+\newcommand{\mass}[2]{#1 \leftarrow #2}
+\newcommand{\msg}[2]{#1: #2}
+\newcommand{\msgvar}{\mathit{msg}}
+\newcommand{\Msg}{\mathit{Msg}}
+\newcommand{\mop}{\mathit{m\_op}}
+\newcommand{\load}[3]{\mathit{ld}\ #1\ #2\ #3}
+\newcommand{\loadr}[3]{\mathit{lr}\ #1\ #2\ #3}
+\newcommand{\msgload}[5]{#1:#2 \leftarrow \mathit{ld}\ #3\ (#4:#5)}
+\newcommand{\loadsrc}[3]{\mathit{ld}\ #1\ #2\ [#3]}
+\newcommand{\fetch}[2]{\mathit{ft}\ #1\ #2}
+\newcommand{\store}[3]{\mathit{st}\ #1\ #2\ #3}
+\newcommand{\storec}[5]{\mathit{sc}\ #1\ #2\ #3\ #4\ #5}
+\newcommand{\dmbsy}{\mathit{dmb.sy}}
+\newcommand{\msgstore}[4]{#1:#2 \leftarrow \mathit{st}\ #3\ #4}
+%\newcommand{\rread}[1]{\mathit{rd}\ #1}
+%\newcommand{\rwrite}[2]{\mathit{wr}\ #1\ #2}
+\newcommand{\gget}[1]{\mathit{get}\ #1}
+\newcommand{\pput}[2]{\mathit{put}\ #1\ #2}
+\newcommand{\rread}[2]{\mathit{rd}\ #1\ #2}
+\newcommand{\rwrite}[3]{\mathit{wr}\ #1\ #2\ #3}
+
+\newcommand{\acq}[1]{\mathit{acq}\ #1}
+\newcommand{\rel}[1]{\mathit{rel}\ #1}
+\newcommand{\bxcl}[1]{\mathit{bxcl}\ #1}
+%\newcommand{\loadr}[2]{\mathit{lr}\ #1\ #2}
+\newcommand{\loadrsrc}[3]{\mathit{lr}\ #1\ #2\ [#3]}
+%\newcommand{\storec}[4]{\mathit{sc}\ #1\ #2\ #3\ #4}
+\newcommand{\storecsrc}[5]{\mathit{sc}\ #1\ #2\ #3\ #4\ [#5]}
+\newcommand{\fence}[1]{\mathit{fence}\ #1}
+\newcommand{\btype}{\mathit{bty}}
+\newcommand{\cas}[3]{\mathit{cas}\ #1\ #2\ #3}
+\newcommand{\unit}{*}
+\newcommand{\atomicstart}{\mathit{bat}}
+\newcommand{\atomicstop}{\mathit{eat}}
+\newcommand{\xclbank}{\mathit{xcl}}
+\newcommand{\loc}{l}
+\newcommand{\hb}{\sqsubset}
+\newcommand{\maydepend}{\rightsquigarrow}
+
+\newcommand{\dl}[1]{dl\ #1}
+\newcommand{\ds}[1]{ds\ #1}
+\newcommand{\il}[1]{il\ #1}
+
+\newcommand{\DC}{\mbox{$\Downarrow$}}
+\newcommand{\subscriptDC}{\mbox{$\scriptstyle \Downarrow$}}
+
+\newcommand{\den}[1]{\mbox{$\parallel$} #1 \mbox{$\parallel$}}
+\newcommand{\lblempty}{\varepsilon}
+
+\newcommand{\Expr}{\mathit{Expr}}
+\newcommand{\expr}{e}
+\newcommand{\bexpr}[2]{#1\ \oplus \ #2}
+\newcommand{\uexpr}[1]{\odot \ #1}
+\newcommand{\instr}{\iota}
+\newcommand{\conft}{C_t}
+\newcommand{\lst}{\mathit{lst}}
+\newcommand{\prs}[3]{\mathit{ps}(#1, #2, #3)}
+\newcommand{\pars}[5]{\mathit{pas}(#1, #2, #3, #4, #5)}
+\newcommand{\reg}{r}
+\newcommand{\rega}{r_1}
+\newcommand{\regb}{r_2}
+\newcommand{\regc}{r_3}
+\newcommand{\regd}{r_4}
+
+% Add without Carry.
+\newcommand{\add}[3]{\mathbf{ADD}\ #1\ #2\ #3 \ }
+%
+\newcommand{\addlt}[3]{\mathbf{ADDLT}\ #1\ #2\ #3 \ }
+%The B instruction causes a branch to label.
+\newcommand{\branch}[1]{\mathbf{B}\ #1\ }
+%The BL instruction causes a branch to label, and copies the address of the next instruction into LR (R14, the link register)
+\newcommand{\branchl}[1]{\mathbf{BL}\ #1\ }
+%
+\newcommand{\ldr}[2]{\mathbf{LDR}\ #1\ #2\ }
+\newcommand{\str}[2]{\mathbf{STR}\ #1\ #2\ }
+
+\newcommand{\cmp}[2]{\mathbf{CMP}\ #1\ #2\ }
+
+\newcommand{\step}[2]{\xrightarrow[#2]{#1}}
+\newcommand{\singlestep}[2]{\xrightarrow[#2]{#1}}
+\newcommand{\doublestep}[2]{\xtwoheadrightarrow[#2]{#1}}
+\newcommand{\triplestep}[2]{\stackrel{}{\doublestep{#1}{#2}\hspace{-0.515cm}\doublestep{}{}}}
+
+\newcommand{\singleleftstep}[2]{\xleftarrow[#2]{#1}}
+\newcommand{\doubleleftstep}[2]{\xtwoheadleftarrow[#2]{#1}}
+\newcommand{\tripleleftstep}[2]{\stackrel{}{\doubleleftstep{}{}\hspace{-0.515cm}\doubleleftstep{#1}{}}}
+
+
+\newcommand{\singlestepdown}[2]{\downarrow}
+\newcommand{\doublestepdown}[2]{\stackrel{#1}{\singlestepdown{}{}\vspace{-0.515cm}\hspace{-0.1cm}\singlestepdown{}{}}}
+
+\newcommand{\tightpar}[1]{{\smallskip \noindent\bf #1}}
+
+\newcommand{\Commits}{C}
+\newcommand{\Decodes}{F}
+
+\newcommand{\Inst }{\mathit{Inst}}
+\newcommand{\Comm}{\mathit{C}}
+\newcommand{\Dec}{\mathit{I}}
+\newcommand{\Ftch}{\mathit{F}}
+\newcommand{\exclusives}{X}
+\newcommand{\restype}{\mathcal{T}}
+\newcommand{\restypemem}{\mathcal{M}}
+\newcommand{\newstate}{\sigma}
+\newcommand{\executedname}[1]{\mathcal{X}(#1)}
+\newcommand{\committedname}[1]{\mathcal{C}(#1)}
+\newcommand{\decodedname}[1]{\mathcal{D}(#1)}
+\newcommand{\modifiedname}[1]{\mathcal{M}(#1)}
+\newcommand{\Ready}{\mathit{Rdy}}
+\newcommand{\Completed}{\mathit{Cmpl}}
+\newcommand{\Void}{\mathit{Void}}
+
+\newcommand{\OpRule}{\textsc{Op}}
+\newcommand{\ShareRule}{\textsc{Shared}}
+\newcommand{\expRule}{\textsc{Exp}}
+\newcommand{\stoRule}{\textsc{Sto}}
+%\newcommand{\ldregpcRule}{\textsc{LdRPC}}
+%\newcommand{\ldthrdRule}{\textsc{LdT}}
+\newcommand{\ldRule}{\textsc{Ld}}
+\newcommand{\ftcRule}{\textsc{Ftc}}
+\newcommand{\dmbRule}{\textsc{Dmb}}
+\newcommand{\pexe}{\textsc{Pexe}}
+\newcommand{\cmt}{\textsc{Cmt}}
+\newcommand{\ret}{\textsc{Ret}}
+\newcommand{\prd}{\textsc{Prd}}
+\newcommand{\rbk}{\textsc{Rbk}}
+\newcommand{\xp}{\textsc{Xp}}
+
+\newcommand{\HERTIL}{\todo[inline]{HERTIL}}
+
+\usepackage{listings}
+\lstset{
+  numbers=none,                    % where to put the line-numbers; possible values are (none, left, right)
+  numbersep=0pt,                   % how far the line-numbers are from the code
+  % numberstyle=\tiny\color{mygray}, % the style that is used for the line-numbers
+%   basicstyle=\small\ttfamily,
+  frame=none,
+  % language=C,
+}
+% \lstset{emph={%
+%     if, then, else, out%
+%   },emphstyle={\bf}%
+% }
+
+\newtheorem{axiom}{Axiom}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "ccs2020-main"
+%%% End:

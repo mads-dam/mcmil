@@ -1,0 +1,29 @@
+\documentclass{article}
+
+
+\input{macros}
+
+\newif\ifshowchanges
+\showchangesfalse
+%\showchangestrue
+
+
+\ifshowchanges
+\newcommand{\changed}[1]{\textcolor{red}{#1}}
+\else 
+\newcommand{\changed}[1]{#1}
+\fi 
+
+
+\begin{document}
+
+\input{newbody}
+
+\end{document}
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
